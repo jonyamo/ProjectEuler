@@ -65,15 +65,3 @@ module ProjectEuler
     end
   end
 end
-
-if __FILE__ == $0
-  class Test
-    extend ProjectEuler::Helpers
-
-    def self.run(n)
-      prime_factors(n)
-    end
-  end
-
-  p Test.run(65)
-end
