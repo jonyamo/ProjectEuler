@@ -1,14 +1,7 @@
 module ProjectEuler
   class Problem1
     def self.solve(n)
-      sum = 0
-
-      n.to_i.times do |i|
-        next if i == 0
-        sum += i if i % 3 == 0 or i % 5 == 0
-      end
-
-      return sum
+      (0...n).inject { |sum, i| i % 3 == 0 || i % 5 == 0 ? sum + i : sum }
     end
   end
 end
