@@ -1,9 +1,11 @@
 require 'minitest/autorun'
 require_relative 'helpers'
 
-include ProjectEuler::Helpers
+include ProjectEuler
 
-describe "helper methods" do
+describe "Helpers" do
+  include Helpers
+
   describe "fibonacci" do
     it "should return the nth fibonacci number" do
       fibonacci(9).must_equal 34
@@ -25,6 +27,20 @@ describe "helper methods" do
   describe "prime_factors" do
     it "should return an array of prime factors for a given number" do
       prime_factors(13_195).must_equal [5, 7, 13, 29]
+    end
+  end
+end
+
+describe "FixnumExtension" do
+  Fixnum.send :include, FixnumExtensions
+
+  describe "palindrome?" do
+    it "should return true if the given number is a palindrome" do
+      9009.palindrome?.must_equal true
+    end
+
+    it "should return false if the given number is not a palindrome" do
+      1234.palindrome?.must_equal false
     end
   end
 end

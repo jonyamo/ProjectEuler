@@ -64,4 +64,10 @@ module ProjectEuler
       fac.uniq
     end
   end
+
+  module FixnumExtensions
+    def palindrome?
+      self.to_s == self.to_s.reverse
+    end
+  end
 end
