@@ -13,3 +13,6 @@ primeFactors n = factor n primes
       | p*p > n        = [n]
       | n `mod` p == 0 = p : factor (n `div` p) (p:ps)
       | otherwise      = factor n ps
+
+palindrome :: (Eq a) => [a] -> Bool
+palindrome xs = xs == reverse xs

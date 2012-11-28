@@ -18,3 +18,10 @@ main = hspec $ do
   describe "primeFactors" $ do
     it "should return a list of prime factors for a given number" $
       primeFactors 13195 `shouldBe` [5,7,13,29] 
+
+  describe "palindrome" $ do
+    it "should return true if the given number is a palindrome" $
+      (palindrome . show) 9009 `shouldBe` True
+
+    it "should return false if the given number is not a palindrome" $
+      (palindrome . show) 1234 `shouldBe` False
